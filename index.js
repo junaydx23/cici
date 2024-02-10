@@ -11,7 +11,7 @@ app.get('/kshitiz', async (req, res) => {
     const userQuery = req.query.emoji;
 
 
-    const systemMessage = `make fun and interesting short story from user emoji you know every emoji meaning  make interesting story useing emojis provided by users.`;
+    const systemMessage = `make fun and interesting very very short and small story from user emoji you know every emoji meaning  make interesting story useing emojis provided by users.`;
 
     const response = await axios.post('https://openchat-ai.onrender.com/chat', {
       prompt: userQuery,
