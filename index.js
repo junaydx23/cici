@@ -10,11 +10,13 @@ app.get('/cici', async (req, res) => {
   try {
     const prompt = req.query.prompt;
 
+    const user = req.query.user
+
     const custom_instruction = ``;
 
     const completeprompt = `{{${custom_instruction}}}\nmessage: ${promp}`;
 
-    const response = await axios.get(`https://hercai.onrender.com/beta/hercai?question=${encodeURIComponent(completeprompt)}`);
+    const response = await axios.get(`https://hercai.onrender.com/beta/hercai?question=${encodeURIComponent(completeprompt)}&user=${user}`);
 
 
     const zoroResponse = response.data.reply;
