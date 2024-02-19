@@ -6,21 +6,18 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get('/kshitiz', async (req, res) => {
+app.get('/cici', async (req, res) => {
   try {
-    const userQuery = req.query.emoji;
+    const prompt = req.query.prompt;
+
+    const custom_instruction = ``;
+
+    const completeprompt = `{{${custom_instruction}}}\nmessage: ${promp}`;
+
+    const response = await axios.get(`https://hercai.onrender.com/beta/hercai?question=${encodeURIComponent(completeprompt)}`);
 
 
-    const systemMessage = `make fun and interesting very very short and small story from user emoji you know every emoji meaning  make interesting story useing emojis provided by users.`;
-
-    const response = await axios.post('https://openchat-ai.onrender.com/chat', {
-      prompt: userQuery,
-      system: systemMessage,
-      conversation: [],
-    });
-
-
-    const zoroResponse = response.data.result;
+    const zoroResponse = response.data.reply;
 
 
     const responseWithEmojis = `${zoroResponse} `;
