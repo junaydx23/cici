@@ -3,7 +3,7 @@ const { RsnChat } = require("rsnchat");
 const rsnchat = new RsnChat("rsnai_Ps4ryTcQkXFnjX6nmFV2BZ7y");
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
